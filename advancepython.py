@@ -1,4 +1,4 @@
-# 1. Write a program to open three files 1 .txt, 2.txt and 3.txt if any these files are not
+# # 1. Write a program to open three files 1 .txt, 2.txt and 3.txt if any these files are not
 # # present, a message without exiting the program must be printed prompting the same.
 # try:
 #   with open("poems.txt") as f1:
@@ -26,3 +26,20 @@
 
 # # 4. Write a program to display a/b where a and b are integers. If b=O, display infinite by
 # # handling the 'ZeroDivisionError'.
+# try:
+#   a = int(input("a:"))
+#   b = int(input("b:"))
+#   print(a/b)
+# except ZeroDivisionError as e:
+#   print("Infinity")
+  
+# 5. store the multiplication tables generated in problem 3 in a file named Tables.txt.
+
+n = int(input("Enter Your desired number:"))
+l = [1 , 2, 3 ,4 ,5 , 6 ,7 ,8 , 9 ,10]
+mul = [n*i for i in l]
+# print(mul)
+with open("Tables.txt" , "a") as f:
+  f.write(f"Table of {n} is: \n {mul}\n")
+with open("Tables.txt", "r") as f:
+    print(f.read())
